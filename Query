@@ -38,3 +38,7 @@ WHERE `hour` > "14:00:00" AND `date` = "2020-06-20";
 SELECT * 
 FROM `degrees`
 WHERE `level` = "magistrale";
+
+// QUERY 7 
+SELECT COUNT(*) AS "total_departments"
+FROM `departments`;
