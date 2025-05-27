@@ -36,7 +36,7 @@ GROUP BY `dipartimento`;
 SELECT `students`.*
 FROM `students`
 JOIN `degrees`
-ON `students`.`degree.id` = `degrees`.`id`
+ON `students`.`degree_id` = `degrees`.`id`
 WHERE `degrees`.`name` LIKE "Corso di Laurea in Economia";
 
 
