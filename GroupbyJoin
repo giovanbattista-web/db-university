@@ -1,46 +1,66 @@
-// Group By
+// GROUP BY 
 1. Contare quanti iscritti ci sono stati ogni anno
 
 // CODE 
-SELECT COUNT(*) AS iscritti, YEAR(`enrolment_date`) AS `data_di_iscrizione`
+SELECT COUNT(*) AS iscritti, YEAR(`enrolment_date`) AS `data_d_iscrizione`
 FROM `students`
-GROUP BY YEAR(`enrolment_date`);
+GROUP BY YEAR(`data_d_iscrizione`);
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
 // CODE 
 SELECT COUNT(*) AS `insegnanti` ,`office_address` AS `ufficio`
 FROM `teachers`
-GROUP BY `office_address`;
+GROUP BY `ufficio`;
 
 
 3. Calcolare la media dei voti di ogni appello d'esame
 
+// CODE
+SELECT AVG(`vote`) AS `media`,`exam_id` AS `appello_d_esame`
+FROM `exam_student`
+GROUP BY `appello_d_esame`;
+
 
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
+// CODE 
 
-// Join
 
+// JOIN
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+
+// CODE 
 
 
 2. Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
 
+// CODE 
+
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+// CODE 
 
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
+// CODE 
+
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
+// CODE 
+
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
+
+// CODE 
 
 
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
 per ogni esame, stampando anche il voto massimo. Successivamente,
 filtrare i tentativi con voto minimo 18.
+
+// CODE 
 
