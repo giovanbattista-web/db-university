@@ -22,7 +22,7 @@ WHERE `cfu` > 10;
 // QUERY 3
 SELECT * 
 FROM `students`
-WHERE YEAR(NOW()) - YEAR(date_of_birth);
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURRENT_DATE) > 30;
 
 // QUERY 4 
 SELECT *
