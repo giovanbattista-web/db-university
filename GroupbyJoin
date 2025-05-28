@@ -54,6 +54,13 @@ AND `degrees`.`level` = "Magistrale";
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
 
 // CODE 
+SELECT DISTINCT `degrees`.*
+FROM `teachers`
+JOIN `course_teacher` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+JOIN `degrees` ON `degrees`.`id` = `courses`.`degree`.`id`
+WHERE `teachers`.`id` = 44;
+
 
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
@@ -75,5 +82,4 @@ AND `degrees`.`level` = "Magistrale";
 per ogni esame, stampando anche il voto massimo. Successivamente,
 filtrare i tentativi con voto minimo 18.
 
-// CODE 
 
