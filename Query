@@ -22,17 +22,19 @@ WHERE `cfu` > 10;
 // QUERY 3
 SELECT * 
 FROM `students`
-WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURRENT_DATE) > 30;
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) > 30;
 
 // QUERY 4 
 SELECT *
 FROM `courses`
-WHERE `period` = "I semestre" AND `year` = 1;
+WHERE `period` = "I semestre" 
+AND `year` = 1;
 
 // QUERY 5 
 SELECT *
 FROM `exams`
-WHERE `hour` > "14:00:00" AND `date` = "2020-06-20";
+WHERE HOUR(`hour`) >= 14 
+AND `date` = "2020-06-20";
 
 // QUERY 6
 SELECT * 
@@ -44,6 +46,6 @@ SELECT COUNT(*) AS "total_departments"
 FROM `departments`;
 
 // QUERY 8
-SELECT * 
+SELECT COUNT(*) AS "numero_insegnanti" 
 FROM `teachers`
 WHERE `phone` IS NULL;
